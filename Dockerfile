@@ -8,7 +8,7 @@ ARG VERSION=7.1.0
 
 RUN apk update \
     && apk upgrade \
-    && apk add --update alpine-sdk git \
+    && apk add --update alpine-sdk git chromium \
     && apk del alpine-sdk \
     && rm -rf /tmp/* /var/cache/apk/* *.tar.gz ~/.npm \
     && npm cache verify \
