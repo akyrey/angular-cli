@@ -16,6 +16,8 @@ RUN apk update \
 
 RUN yarn global add @angular/cli@$VERSION
 
+RUN yarn config set network-timeout 100000 -g
+
 RUN mkdir -p /usr/src/app
 
 EXPOSE 4200
