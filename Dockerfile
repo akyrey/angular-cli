@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node:lts-slim
 
 LABEL maintainer="Dario Vogogna <d.vogogna@vargroup.it>"
 LABEL tools="git node npm yarn"
