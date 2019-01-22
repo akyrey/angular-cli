@@ -1,4 +1,4 @@
-FROM node:10.13-alpine
+FROM node:lts-alpine
 
 LABEL maintainer="Dario Vogogna <d.vogogna@vargroup.it>"
 LABEL tools="git node npm yarn"
