@@ -1,23 +1,12 @@
-FROM node:lts-slim
+FROM node:alpine
 
-LABEL maintainer="Dario Vogogna <d.vogogna@vargroup.it>"
-LABEL tools="git node npm yarn"
+LABEL maintainer="Dario Vogogna <stein.dario@gmail.com>"
+LABEL tools="node npm angular"
 
-# Latest versions 1.7.4, 6.2.6, 7.1.0
-ARG VERSION=7.1.0
+RUN npm install -g @angular/cli
 
-RUN apt update \
-    && apt upgrade -y \
-    && apt install -y git chromium \
-    && rm -rf /tmp/* /var/cache/apt/* *.tar.gz ~/.npm \
-    && npm cache verify
-
-RUN yarn global add @angular/cli@$VERSION
-
-RUN yarn config set network-timeout 100000 -g
-
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /app
 
 EXPOSE 4200
 
-WORKDIR /usr/src/app
+WORKDIR /app

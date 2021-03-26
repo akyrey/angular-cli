@@ -3,6 +3,6 @@
 echo "------ HOOK START - BUILD -------"
 
 # https://docs.docker.com/docker-cloud/builds/advanced/
-docker build --build-arg VERSION=$ENV_VERSION -t $IMAGE_NAME .
+docker build -t $IMAGE_NAME .
 
 echo "------ HOOK END - BUILD -------"
